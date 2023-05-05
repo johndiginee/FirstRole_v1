@@ -11,6 +11,7 @@ class Job(models.Model):
     requirements = models.TextField()
     ideal_candidate = models.TextField()
     is_avaliable = models.BooleanField(default=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

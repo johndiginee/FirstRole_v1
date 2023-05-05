@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'resume',
     'users',
     'widget_tweaks',
+    'website',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Job
+from .models import Job, ApplyJob
 from .form import CreateJobForm, UpdateJobForm
 
 
@@ -43,3 +43,29 @@ def update_job(request, pk):
         form = UpdateJobForm(instance=job)
         context = {'form':form}
         return render(request, 'job/update_job.html', context)
+
+
+def manage_jobs(request):
+    jobs = Job.objects.filter(user=request.user, company=request.user.company)
+    context = {'jobs':jobs}
+    return render(request, 'job/manage_jobs.html', context)
+
+
+def apply_to_job(request, pk):
+    """Authenticate user before granting them access to apply for jobs"""
+    if request.user.is_authenticated:
+        job = Job.objects.get(pk=pk)
+        if ApplyJob.objects.filter(user=request.user, job=pk).exists():
+            messages.warning(request, 'Permission Denied')
+            return redirect('dashboard')
+        else:
+            ApplyJob.objects.create(
+                job=job,
+                user = request.user,
+                status = 'Pending'
+            )
+            messages.info(request, 'You have successfully applied! Please see dashboard')
+            return redirect('dashboard')
+    else:
+        messages.info(request, 'Please login to apply.')
+        return redirect('login')

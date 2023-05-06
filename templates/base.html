@@ -63,7 +63,7 @@
                         
                         {% if request.user.has_resume %}
                         <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link" href="javascript:void(0)" id="jobsdropdown" role="button"
+                            <a class="nav-link" href="{% url 'job-listing' %}" id="jobsdropdown" role="button"
                                 data-bs-toggle="dropdown">
                                 Apply to Jobs</div>
                             </a>
@@ -84,13 +84,22 @@
                     <ul class="navbar-nav mx-auto navbar-center">
                       
                         {% if request.user.has_company %}
-                        <li class="nav-item dropdown dropdown-hover">
+                        <li>
                             <a class="nav-link" href="{% url 'create-job' %}" role="button"
                                 data-bs-toggle="dropdown">
-                                Create Job Ads</div>
+                                Create Job Ads
                             </a>
 
                         </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'manage-jobs' %}" role="button"
+                                data-bs-toggle="dropdown">
+                                Manage Jobs
+                            </a>
+
+                        </li>
+                        
+                        
                         {% else %}
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link" href="{% url 'update-company' %}" role="button"

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="page-content">
+
+    <!-- Start home -->
+    <section class="page-title-box" style="padding-top: 152px!important; padding-bottom: 10px!important;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-4">Manage Jobs</h1>
+                        
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- end home -->
+
+    <!-- START SHAPE -->
+    <div class="position-relative" style="z-index: 1">
+        <div class="shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+                <path fill="#FFFFFF" fill-opacity="1"
+                    d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- END SHAPE -->
+
+</div>
+<!-- START JOBS-POST-EDIT -->
+<section class="section" style="padding-top: 10px!important; padding-bottom: 10px!important;">
+    <div class="container">
+        <div class="card mt-4" id="grid">
+            <div class="p-4 border-bottom">
+                <h5 class="mb-0">List of Jobs</h5>  
+            </div>
+            <div class="card-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Job Title</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Salary (NGN)</th>
+                            <th scope="col">No. of Applicants </th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for job in jobs %}
+                          <tr>
+                            
+                            <td>{{ job.title }}</td>
+                            <td>{{ job.location }}</td>
+                            <td>{{ job.salary }}</td>
+                            <td>{{ job.applyjob_set.all.count }}</td>
+                            {% if job.is_avaliable %}
+                            <td><span class="badge bg-success">Active</span></td>
+                            {% else %}
+                            <td><span class="badge bg-warning">Not Active</span></td>
+                            {% endif %}
+                            <td><b><a href="#"><small>Update Job</small></a></b></td>
+                          </tr>
+                          {% endfor %}
+                          
+                    
+                          
+                        </tbody>
+                      </table>
+                </div>  
+            </div><!--end card-body-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</section>
+<!-- END JOBS-POST-EDIT -->
+
+{% endblock content %}

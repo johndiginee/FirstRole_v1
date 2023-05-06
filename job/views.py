@@ -69,3 +69,9 @@ def apply_to_job(request, pk):
     else:
         messages.info(request, 'Please login to apply.')
         return redirect('login')
+
+def all_applicants(request, pk):
+    job = Job.objects.get(pk=pk)
+    applicants = job.applyjob_set.all()
+    context = {'job':job, 'applicants':applicants}
+    return render(request, 'job/all_applicants.html', context)

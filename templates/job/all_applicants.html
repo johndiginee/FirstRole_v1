@@ -10,7 +10,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="text-center text-white">
-                        <h1 class="mb-4">Manage Jobs</h1>
+                        <h1 class="mb-4">All Applicants for {{ job.title }} Position</h1>
                         
                     </div>
                 </div>
@@ -46,28 +46,24 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                           <tr>
-                            <th scope="col">Job Title</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Surname</th>
                             <th scope="col">Location</th>
-                            <th scope="col">Salary (NGN)</th>
-                            <th scope="col">No. of Applicants </th>
-                            <th scope="col">Status</th>
+                            <th scope="col">Job Title </th>
+                            <th scope="col">Application Date</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {% for job in jobs %}
+                          {% for applicant in applicants %}
                           <tr>
                             
-                            <td>{{ job.title }}</td>
-                            <td>{{ job.location }}</td>
-                            <td>{{ job.salary }}</td>
-                            <td>{{ job.applyjob_set.all.count }} <b><a href="{% url 'all-applicants' job.pk %}"> <small>View All</small></a></b></td>
-                            {% if job.is_avaliable %}
-                            <td><span class="badge bg-success">Active</span></td>
-                            {% else %}
-                            <td><span class="badge bg-warning">Not Active</span></td>
-                            {% endif %}
-                            <td><b><a href="#"><small>Update Job</small></a></b></td>
+                            <td>{{ applicant.user.resume.first_name }}</td>
+                            <td>{{ applicant.user.resume.surname }}</td>
+                            <td>{{ applicant.user.resume.location }}</td>
+                            <td>{{ applicant.user.resume.job_title }}</td>
+                            <td>{{ applicant.timestamp }}</td>
+                            <td><b><a href="#"><small>Download CV</small></a></b></td>
                           </tr>
                           {% endfor %}
                           
@@ -75,6 +71,7 @@
                           
                         </tbody>
                       </table>
+                      <a href="{% url 'manage-jobs' %}"><button class="btn btn-primary">Back <i class="mdi mdi-left"></i> </button></a>
                 </div>  
             </div><!--end card-body-->
         </div><!--end grid-->

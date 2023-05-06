@@ -53,7 +53,7 @@ def manage_jobs(request):
 
 def apply_to_job(request, pk):
     """Authenticate user before granting them access to apply for jobs"""
-    if request.user.is_authenticated:
+    if request.user.is_authenticated and request.user.is_applicant:
         job = Job.objects.get(pk=pk)
         if ApplyJob.objects.filter(user=request.user, job=pk).exists():
             messages.warning(request, 'Permission Denied')

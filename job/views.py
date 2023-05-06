@@ -28,7 +28,7 @@ def create_job(request):
         return redirect('dashboard')
 
 
-# Updatejob
+# Update job
 def update_job(request, pk):
     job = Job.objects.get(pk=pk)
     if request.method == 'POST':
@@ -67,7 +67,7 @@ def apply_to_job(request, pk):
             messages.info(request, 'You have successfully applied! Please see dashboard')
             return redirect('dashboard')
     else:
-        messages.info(request, 'Please login to apply.')
+        messages.info(request, 'Please login as an applicant to apply.')
         return redirect('login')
 
 def all_applicants(request, pk):

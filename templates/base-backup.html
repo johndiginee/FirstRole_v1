@@ -39,17 +39,10 @@
         <!--Navbar Start-->
         <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
             <div class="container-fluid custom-container">
-                {% if request.user.is_authenticated %}
-                <a class="navbar-brand text-dark fw-bold me-auto" href="{% url 'dashboard' %}">
-                    <img src="{% static 'assets/images/logo-dark.png' %}" height="22" alt="" class="logo-dark" />
-                    <img src="{% static 'assets/images/logo-light.png' %}" height="22" alt="" class="logo-light" />
-                </a>
-                {% else %}
                 <a class="navbar-brand text-dark fw-bold me-auto" href="{% url 'home' %}">
                     <img src="{% static 'assets/images/logo-dark.png' %}" height="22" alt="" class="logo-dark" />
                     <img src="{% static 'assets/images/logo-light.png' %}" height="22" alt="" class="logo-light" />
                 </a>
-                {% endif %}
                 <div>
                     <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
@@ -60,12 +53,18 @@
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_applicant %}
                     <ul class="navbar-nav mx-auto navbar-center">
-                        
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link" href="javascript:void(0)" id="homedrop" role="button"
+                                data-bs-toggle="dropdown">
+                                Home
+                            </a>
+
+                        </li>
                         {% if request.user.has_resume %}
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link" href="javascript:void(0)" id="jobsdropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                Apply to Jobs</div>
+                                Apply to Jobs <div class="arrow-down"></div>
                             </a>
 
                         </li>
@@ -78,29 +77,47 @@
 
                         </li>
                         {% endif %}
-                       
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
                     </ul><!--end navbar-nav-->
                     {% elif request.user.is_recruiter %}
                     <ul class="navbar-nav mx-auto navbar-center">
-                      
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link" href="javascript:void(0)" id="homedrop" role="button"
+                                data-bs-toggle="dropdown">
+                                Home
+                            </a>
+
+                        </li>
                         {% if request.user.has_company %}
                         <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link" href="{% url 'create-job' %}" role="button"
+                            <a class="nav-link" href="{% url 'create-job' %}" id="jobsdropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                Create Job Ads</div>
+                                Create Job Ads <div class="arrow-down"></div>
                             </a>
 
                         </li>
                         {% else %}
                         <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link" href="{% url 'update-company' %}" role="button"
+                            <a class="nav-link" href="{% url 'update-company' %}" id="jobsdropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                Create Company</div>
+                                Create Company <div class="arrow-down"></div>
                             </a>
 
                         </li>
                         {% endif %}
-    
+                        <li class="nav-item dropdown dropdown-hover">
+                            <a class="nav-link" href="javascript:void(0)" id="pagesdoropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                Pages
+                                <div class="arrow-down"></div>
+                            </a>
+
+                        </li><!--end dropdown-->
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
                     </ul><!--end navbar-nav-->
                     {% endif %}
                     {% else %}
@@ -113,29 +130,20 @@
                             </a>
 
                         </li>
+                        <a href="{% url 'login' %}"><button type="button"
+                                class="btn btn-success btn-sm">Test</button></a>
 
 
-                    </ul>
+
+
+                    </ul><!--end navbar-nav-->
                     {% endif %}
                 </div>
 
-                
-                    <ul class="header-menu list-inline d-flex align-items-center mb-0">
-                        {% if request.user.is_authenticated %}
-                        <li class="list-inline-item dropdown">
-                        <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary">Logout</button></a>
-                        </li>
-                  
-                        {% else %}
-                        <li class="list-inline-item dropdown">
-                        <a href="{% url 'login' %}"><button type="button" class="btn btn-primary">Login</button></a>
-                        </li>
-                        {% endif %}
-                    </ul>
-
-                    
-                
-                
+                <!--end navabar-collapse-->
+                <ul class="header-menu list-inline d-flex align-items-center mb-0">
+                    <a href="{% url 'login' %}"><button type="button" class="btn btn-success btn-sm">Login</button></a>
+                </ul><!--end header-menu-->
             </div>
             <!--end container-->
         </nav>

@@ -63,7 +63,7 @@
                             <td>{{ applicant.user.resume.location }}</td>
                             <td>{{ applicant.user.resume.job_title }}</td>
                             <td>{{ applicant.timestamp }}</td>
-                            <td><b><a href="#"><small>Download CV</small></a></b></td>
+                            <td><b><a href="{{ applicant.user.resume.upload_resume.url }}" target="_blank"><small>Download CV</small></a></b></td>
                           </tr>
                           {% endfor %}
                           

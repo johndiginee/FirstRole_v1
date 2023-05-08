@@ -62,12 +62,16 @@
                     <ul class="navbar-nav mx-auto navbar-center">
                         
                         {% if request.user.has_resume %}
-                        <li class="nav-item dropdown dropdown-hover">
-                            <a class="nav-link" href="{% url 'job-listing' %}" id="jobsdropdown" role="button"
-                                data-bs-toggle="dropdown">
+                        <li>
+                            <a class="nav-link" href="{% url 'job-listing' %}">
                                 Apply to Jobs</div>
                             </a>
-
+                            
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'applied-jobs' %}">
+                                Manage Job Applications</div>
+                            </a>
                         </li>
                         {% else %}
                         <li class="nav-item dropdown dropdown-hover">
@@ -75,7 +79,6 @@
                                 data-bs-toggle="dropdown">
                                 Create Resume
                             </a>
-
                         </li>
                         {% endif %}
                        

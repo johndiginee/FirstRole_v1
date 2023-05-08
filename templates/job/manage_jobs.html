@@ -59,7 +59,7 @@
                           <tr>
                             
                             <td>{{ job.title }}</td>
-                            <td>{{ job.location }}</td>
+                            <td>{{ job.city }}, {{ job.state }}</td>
                             <td>{{ job.salary }}</td>
                             <td>{{ job.applyjob_set.all.count }} <b><a href="{% url 'all-applicants' job.pk %}"> <small>View All</small></a></b></td>
                             {% if job.is_avaliable %}

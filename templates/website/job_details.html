@@ -79,7 +79,7 @@
                                 <div class="col-lg-3">
                                     <div class="border p-3">
                                         <p class="text-muted fs-13 mb-0">Location</p>
-                                        <p class="fw-medium mb-0">{{ job.location }}</p>
+                                        <p class="fw-medium mb-0">{{ job.city }}</p>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
@@ -371,7 +371,7 @@
                                         <i class="uil uil-usd-circle icon bg-soft-primary"></i>
                                         <div class="ms-3">
                                             <h6 class="fs-14 mb-2">Offered Salary</h6>
-                                            <p class="text-muted mb-0">$35k - $45k</p>
+                                            <p class="text-muted mb-0">₦{{ job.salary|intcomma }}</p>
                                         </div>
                                     </div>
                                 </li>
@@ -379,8 +379,8 @@
                                     <div class="d-flex mt-4">
                                         <i class="uil uil-graduation-cap icon bg-soft-primary"></i>
                                         <div class="ms-3">
-                                            <h6 class="fs-14 mb-2">Qualification</h6>
-                                            <p class="text-muted mb-0">Bachelor Degree</p>
+                                            <h6 class="fs-14 mb-2">Job Type</h6>
+                                            <p class="text-muted mb-0">{{ job.job_type }}</p>
                                         </div>
                                     </div>
                                 </li>
@@ -389,7 +389,7 @@
                                         <i class="uil uil-building icon bg-soft-primary"></i>
                                         <div class="ms-3">
                                             <h6 class="fs-14 mb-2">Industry</h6>
-                                            <p class="text-muted mb-0">Private</p>
+                                            <p class="text-muted mb-0">{{ job.industry }}</p>
                                         </div>
                                     </div>
                                 </li>

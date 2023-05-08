@@ -46,8 +46,10 @@ INSTALLED_APPS = [
     'company',
     'resume',
     'users',
-    'widget_tweaks',
     'website',
+
+    'widget_tweaks',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

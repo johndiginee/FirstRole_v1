@@ -10,7 +10,7 @@ def update_company(request):
     if request.user.is_recruiter:
         company = Company.objects.get(user=request.user)
         if request.method == 'POST':
-            form = UpdateCompanyForm(request.POST, instance=company)
+            form = UpdateCompanyForm(request.POST, request.FILES, instance=company)
             if form.is_valid():
                 var = form.save(commit=False)
                 user = User.objects.get(id=request.user.id)
@@ -29,6 +29,8 @@ def update_company(request):
         messages.warning(request, 'Permission denied')
         return redirect('dashboard')
 
+# def company_image(self):
+#     return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
 
 # View company details
 def company_details(request, pk):

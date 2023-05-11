@@ -8,6 +8,7 @@ class Company(models.Model):
     est_date = models.PositiveIntegerField(null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     state = models.CharField(max_length=100, null=True, blank=True)
+    # company_logo = models.ImageField(upload_to='logo', null=True, blank=True)
     #logo = models.ImageField(upload_to="company_logo", default="logo.jpg")
 
     

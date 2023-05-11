@@ -33,7 +33,6 @@ class Job(models.Model):
     industry = models.ForeignKey(Industry, on_delete=models.DO_NOTHING, null=True, blank=True)
     state = models.ForeignKey(State, on_delete=models.DO_NOTHING, null=True, blank=True)
     job_type = models.CharField(max_length=20, choices=job_type_choices, null=True, blank=True)
-    
 
     def __str__(self):
         return self.title

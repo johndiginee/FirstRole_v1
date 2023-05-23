@@ -3,6 +3,11 @@ from company.models import Company
 from users.models import User
 
 class State(models.Model):
+    """Represent a State.
+    
+    Attributes:
+        name: This is a CharField with a maximum length of 100 characters. It represents the name of the state entity.
+    """
     name = models.CharField(max_length=100)
 
     def __str__(self):

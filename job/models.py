@@ -14,6 +14,11 @@ class State(models.Model):
         return self.name
 
 class Industry(models.Model):
+    """Represent a Industry.
+    
+    Attributes:
+        name: This is a character field that stores the name of the industry. It has a maximum length of 100 characters.
+    """
     name = models.CharField(max_length=100)
 
     def __str__(self):

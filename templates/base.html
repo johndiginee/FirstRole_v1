@@ -36,7 +36,7 @@
     <!-- Begin page -->
     <div>
 
-        <!--Navbar Start-->
+        <!-- Navbar Start-->
         <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
             <div class="container-fluid custom-container">
                 {% if request.user.is_authenticated %}
@@ -63,14 +63,13 @@
                         
                         {% if request.user.has_resume %}
                         <li>
-                            <a class="nav-link" href="{% url 'job-listing' %}">
-                                Apply to Jobs</div>
+                            <a class="nav-link" href="{% url 'job-listing' %}" >
+                                Apply to Jobs
                             </a>
-                            
                         </li>
                         <li>
                             <a class="nav-link" href="{% url 'applied-jobs' %}">
-                                Manage Job Applications</div>
+                                Manage Job Applications
                             </a>
                         </li>
                         {% else %}
@@ -107,7 +106,7 @@
                         <li class="nav-item dropdown dropdown-hover">
                             <a class="nav-link" href="{% url 'update-company' %}" role="button"
                                 data-bs-toggle="dropdown">
-                                Create Company</div>
+                                Create Company
                             </a>
 
                         </li>
@@ -129,9 +128,7 @@
 
                     </ul>
                     {% endif %}
-                </div>
 
-                
                     <ul class="header-menu list-inline d-flex align-items-center mb-0">
                         {% if request.user.is_authenticated %}
                         <li class="list-inline-item dropdown">
@@ -144,9 +141,10 @@
                         </li>
                         {% endif %}
                     </ul>
+                </div>
 
-                    
                 
+                    
                 
             </div>
             <!--end container-->

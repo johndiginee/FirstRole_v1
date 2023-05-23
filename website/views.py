@@ -3,17 +3,20 @@ from job.models import Job, ApplyJob
 from .filter import Jobfilter
 
 def home(request):
+    """Filter internships on home page"""
     filter = Jobfilter(request.GET, queryset=Job.objects.filter(is_avaliable=True).order_by('-timestamp'))
     context = {'filter':filter}
     return render(request, 'website/home.html', context)
 
 
 def job_listing(request):
+    """List avaliable internships"""
     jobs = Job.objects.filter(is_avaliable=True).order_by('-timestamp')
     context = {'jobs':jobs}
     return render(request, 'website/job-listing.html', context)
 
 def job_details(request, pk):
+    """Display internship details"""
     if ApplyJob.objects.filter(user=request.user, job=pk).exists():
         has_applied = True
     else:

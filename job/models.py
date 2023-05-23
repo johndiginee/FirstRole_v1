@@ -65,6 +65,14 @@ class Job(models.Model):
 
 
 class ApplyJob(models.Model):
+    """Represent a ApplyJob.
+    
+    Attributes:
+        user: ForeignKey to the User class representing the user who applied for the job
+        job: ForeignKey to the Job class representing the job the user applied for
+        timestamp: DateTimeField representing the date the application was created
+        status: CharField representing the status of the application (accepted, declined, or pending)
+    """
     status_choices = (
         ('Accepted', 'Accepted'),
         ('Declined', 'Declined'),

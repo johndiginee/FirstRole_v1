@@ -19,5 +19,5 @@ def job_details(request, pk):
     else:
         has_applied = False
     job = Job.objects.get(pk=pk)
-    context = {'job':job}
+    context = {'job':job, 'has_applied':has_applied}
     return render(request, 'website/job_details.html', context)

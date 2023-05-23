@@ -26,6 +26,22 @@ class Industry(models.Model):
 
 
 class Job(models.Model):
+    """Represent a Job.
+    
+    Attributes:
+        user: ForeignKey to the User class representing the user who posted the job
+        company: ForeignKey to the Company class representing the company posting the job
+        title: CharField representing the job title
+        city: CharField representing the city where the job is located
+        salary: PositiveIntegerField representing the job salary
+        requirements: TextField representing the job requirements
+        ideal_candidate: TextField representing the ideal candidate for the job
+        is_avaliable: BooleanField representing whether the job is available or not
+        timestamp: DateTimeField representing the date the job was created
+        industry: ForeignKey to the Industry class representing the industry the job belongs to
+        state: ForeignKey to the State class representing the state where the job is located
+        job_type: CharField representing the type of job (remote, onsite, or hybrid)
+    """
     job_type_choices = (
         ('Remote', 'Remote'),
         ('Onsite', 'Onsite'),

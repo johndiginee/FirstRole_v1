@@ -61,7 +61,7 @@ class Job(models.Model):
     job_type = models.CharField(max_length=20, choices=job_type_choices, null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
 
 class ApplyJob(models.Model):

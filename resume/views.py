@@ -3,7 +3,10 @@ from django.contrib import messages
 from .models import Resume
 from users.models import User
 from .form import UpdateResumeForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def update_resume(request):
     if request.user.is_applicant:
         resume = Resume.objects.get(user=request.user)
@@ -27,6 +30,7 @@ def update_resume(request):
         messages.warning(request, 'Permission denied')
         return redirect('dashboard')
 
+@login_required
 def resume_details(request, pk):
     resume = Resume.objects.get(pk=pk)
     context = {'resume':resume}

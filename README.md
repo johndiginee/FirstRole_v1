@@ -7,3 +7,6 @@ FirstRole aims connects startups with new software developers who are willing to
 ## Virtual env
 - python3 -m venv venv
 - source venv/bin/activate
+
+## Issue
+Users without an account can't view jobs details

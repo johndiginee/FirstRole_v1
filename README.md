@@ -14,6 +14,10 @@ FirstRole aims connects startups with new software developers who are willing to
 * Heroku - Cloud Platform as a Service (PaaS)
 * Gunicorn - Python Web Server Gateway Interface HTTP server.
 
+## Architecture
+<img src="https://res.cloudinary.com/dkezlmzn1/image/upload/v1684926876/Front_End_1_zcwr5l.png"/>
+The architecture consist of two main parts: the front end and the back end. The front end was developed using Bootstrap framework which provide the user interface for the FirstRole web application. The back end was created using the Django framework which handle the logic, and database operations.
+
 ## Installation
 
 ```bash

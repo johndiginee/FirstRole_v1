@@ -4,9 +4,17 @@ The major reason new software developers struggle to get their first role in tec
 So they opt for someone that is already market ready, instead of risking it. And as such new developers keep getting rejected by tech companies due to lack of experience.
 FirstRole aims connects startups with new software developers who are willing to work for free.
 
+## Tools
+* Django
+* django-filter
+* Pillow
+* python-decouple
+* SQLite
+* sqlparse
+
+Check requirements.txt for complete tools
+
 ## Virtual env
 - python3 -m venv venv
 - source venv/bin/activate
 
-## Issue
-Users without an account can't view jobs details

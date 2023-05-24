@@ -344,25 +344,17 @@
                                         <i class="uil uil-user icon bg-soft-primary"></i>
                                         <div class="ms-3">
                                             <h6 class="fs-14 mb-2">Job Title</h6>
-                                            <p class="text-muted mb-0">Product Designer</p>
+                                            <p class="text-muted mb-0">{{ job.title }}</p>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="d-flex mt-4">
-                                        <i class="uil uil-star-half-alt icon bg-soft-primary"></i>
-                                        <div class="ms-3">
-                                            <h6 class="fs-14 mb-2">Experience</h6>
-                                            <p class="text-muted mb-0"> 0-3 Years</p>
-                                        </div>
-                                    </div>
-                                </li>
+                              
                                 <li>
                                     <div class="d-flex mt-4">
                                         <i class="uil uil-location-point icon bg-soft-primary"></i>
                                         <div class="ms-3">
                                             <h6 class="fs-14 mb-2">Location</h6>
-                                            <p class="text-muted mb-0"> New york</p>
+                                            <p class="text-muted mb-0"> {{ job.city }}</p>
                                         </div>
                                     </div>
                                 </li>
@@ -398,7 +390,7 @@
                                         <i class="uil uil-history icon bg-soft-primary"></i>
                                         <div class="ms-3">
                                             <h6 class="fs-14 mb-2">Date Posted</h6>
-                                            <p class="text-muted mb-0">Posted 2 hrs ago</p>
+                                            <p class="text-muted mb-0">{{ job.timestamp|naturaltime }}</p>
                                         </div>
                                     </div>
                                 </li>

@@ -47,7 +47,7 @@
                             <div class="tab-pane fade show active" id="recent-jobs" role="tabpanel"
                                 aria-labelledby="recent-jobs-tab">
                                 {% if jobs %}
-                                {% for job in jobs %}
+                                {% for job in page_obj %}
                                 <div class="job-box card mt-4">
                                     <div class="bookmark-label text-center">
                                         <a href="javascript:void(0)" class="text-white align-middle"><i class="mdi mdi-star"></i></a>

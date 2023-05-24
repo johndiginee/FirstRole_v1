@@ -4,15 +4,14 @@ FirstRole is a web app to help new software engineers land the first tech role! 
 So they opt for someone that is already market ready, instead of risking it. And as such new developers keep getting rejected by tech companies due to lack of experience.
 FirstRole aims connects startups with new software developers who are willing to work for free.
 
-## Tools
-* Django
-* django-filter
-* Pillow
-* python-decouple
-* SQLite
-* sqlparse
-
-Check requirements.txt for complete tools
+## Built With
+* Python - The Backend Language
+* Django - The Web Development Framework
+* Bootstrap - HTML, CSS and JavaScript framework
+* Javascript - The Frontend Language
+* Postgres - Relational Database Management System
+* Heroku - Cloud Platform as a Service (PaaS)
+* Gunicorn - Python Web Server Gateway Interface HTTP server.
 
 ## Installation
 
@@ -32,3 +31,5 @@ pip install -r requirements.txt
 ## Authors
 John Diginee - [LinkedIn](https://www.linkedin.com/in/johndiginee/) / [Twitter](http://twitter.com/johndiginee)
 
+## Acknowledgements
+[Holberton School](https://www.holbertonschool.com/) & [ALX Africa](https://www.alxafrica.com/) (Staff and Students)

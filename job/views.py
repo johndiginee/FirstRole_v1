@@ -63,7 +63,7 @@ def apply_to_job(request, pk):
 
         job = Job.objects.get(pk=pk)
         if ApplyJob.objects.filter(user=request.user, job=pk).exists():
-            messages.warning(request, 'Permission Denied')
+            messages.warning(request, 'Permission Denied! You have already applied this job!!')
             return redirect('dashboard')
         else:
             ApplyJob.objects.create(
@@ -84,7 +84,7 @@ def all_applicants(request, pk):
     context = {'job':job, 'applicants':applicants}
     return render(request, 'job/all_applicants.html', context)
 
-
+@login_required
 def applied_jobs(request):
     jobs = ApplyJob.objects.filter(user=request.user)
     context = {'jobs':jobs}

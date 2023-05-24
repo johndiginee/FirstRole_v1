@@ -3,9 +3,13 @@ from django.contrib import messages
 from .models import Company
 from .form import UpdateCompanyForm
 from users.models import User
+from django.contrib.auth.decorators import login_required
+
+
 
 
 # Update company
+@login_required
 def update_company(request):
     if request.user.is_recruiter:
         company = Company.objects.get(user=request.user)
@@ -33,6 +37,7 @@ def update_company(request):
 #     return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
 
 # View company details
+@login_required
 def company_details(request, pk):
     company = Company.objects.get(pk=pk)
     context = {'company':company}

@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def update_resume(request):
+    """Update applicant resume."""
     if request.user.is_applicant:
         resume = Resume.objects.get(user=request.user)
         if request.method == 'POST':
@@ -32,6 +33,7 @@ def update_resume(request):
 
 @login_required
 def resume_details(request, pk):
+    """View resume."""
     resume = Resume.objects.get(pk=pk)
     context = {'resume':resume}
     return render(request, 'resume/resume_details.html', context)

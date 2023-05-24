@@ -6,9 +6,9 @@ from django.contrib.auth.decorators import login_required
 
 
 
-# Create a job
 @login_required
 def create_job(request):
+    """Create job."""
     if request.user.is_recruiter and request.user.has_company:
         if request.method == 'POST':
             form = CreateJobForm(request.POST)
@@ -31,9 +31,9 @@ def create_job(request):
         return redirect('dashboard')
 
 
-# Update job
 @login_required
 def update_job(request, pk):
+    """Update job."""
     job = Job.objects.get(pk=pk)
     if request.method == 'POST':
         form = UpdateJobForm(request.POST, instance=job)
@@ -51,13 +51,14 @@ def update_job(request, pk):
 
 @login_required
 def manage_jobs(request):
+    """Manage jobs."""
     jobs = Job.objects.filter(user=request.user, company=request.user.company)
     context = {'jobs':jobs}
     return render(request, 'job/manage_jobs.html', context)
 
 
 def apply_to_job(request, pk):
-    """Authenticate user before granting them access to apply for jobs"""
+    """Authenticate user before granting them access to apply for jobs."""
     # if request.user.is_authenticated and request.user.is_applicant:
     if request.user.is_authenticated:
 
@@ -79,6 +80,7 @@ def apply_to_job(request, pk):
 
 @login_required
 def all_applicants(request, pk):
+    """List all applicants."""
     job = Job.objects.get(pk=pk)
     applicants = job.applyjob_set.all()
     context = {'job':job, 'applicants':applicants}
@@ -86,6 +88,7 @@ def all_applicants(request, pk):
 
 @login_required
 def applied_jobs(request):
+    """Apply for job."""
     jobs = ApplyJob.objects.filter(user=request.user)
     context = {'jobs':jobs}
     return render(request, 'job/applied_job.html', context)

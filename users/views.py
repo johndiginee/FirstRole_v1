@@ -7,8 +7,8 @@ from resume.models import Resume
 from company.models import Company
 
 
-# register applicant only
 def register_applicant(request):
+    """Register applicant only."""
     if request.method == 'POST':
         form = RegisterUserForm(request.POST)
         if form.is_valid():
@@ -28,8 +28,8 @@ def register_applicant(request):
         return render(request, 'users/register_applicant.html', context)
 
 
-# register recruiter only
 def register_recruiter(request):
+    """Register recruiter only."""
     if request.method == 'POST':
         form = RegisterUserForm(request.POST)
         if form.is_valid():
@@ -50,8 +50,8 @@ def register_recruiter(request):
 
 
 
-# login a user
 def login_user(request):
+    """Login user."""
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -67,8 +67,8 @@ def login_user(request):
         return render(request, 'users/login.html')
 
 
-# logout a user
 def logout_user(request):
+    """Logout user."""
     logout(request)
     messages.info(request, 'Your session has ended.')
     return redirect('login')

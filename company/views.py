@@ -7,10 +7,9 @@ from django.contrib.auth.decorators import login_required
 
 
 
-
-# Update company
 @login_required
 def update_company(request):
+    """Update company information."""
     if request.user.is_recruiter:
         company = Company.objects.get(user=request.user)
         if request.method == 'POST':
@@ -36,9 +35,9 @@ def update_company(request):
 # def company_image(self):
 #     return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
 
-# View company details
 @login_required
 def company_details(request, pk):
+    """View company details."""
     company = Company.objects.get(pk=pk)
     context = {'company':company}
     return render(request, 'company/company_detail.html', context)

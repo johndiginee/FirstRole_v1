@@ -2,9 +2,12 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Job, ApplyJob
 from .form import CreateJobForm, UpdateJobForm
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create a job
+@login_required
 def create_job(request):
     if request.user.is_recruiter and request.user.has_company:
         if request.method == 'POST':
@@ -29,6 +32,7 @@ def create_job(request):
 
 
 # Update job
+@login_required
 def update_job(request, pk):
     job = Job.objects.get(pk=pk)
     if request.method == 'POST':
@@ -45,6 +49,7 @@ def update_job(request, pk):
         return render(request, 'job/update_job.html', context)
 
 
+@login_required
 def manage_jobs(request):
     jobs = Job.objects.filter(user=request.user, company=request.user.company)
     context = {'jobs':jobs}
@@ -72,6 +77,7 @@ def apply_to_job(request, pk):
         messages.info(request, 'Please login as an applicant to apply.')
         return redirect('login')
 
+@login_required
 def all_applicants(request, pk):
     job = Job.objects.get(pk=pk)
     applicants = job.applyjob_set.all()

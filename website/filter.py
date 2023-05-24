@@ -4,6 +4,7 @@ from django import forms
 
 
 class Jobfilter(django_filters.FilterSet):
+    """Filter job title, location and industy on homepage."""
     title = django_filters.CharFilter(lookup_expr='icontains')
     state = django_filters.ModelChoiceFilter(
         queryset=State.objects.all(),

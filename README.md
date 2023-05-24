@@ -14,7 +14,21 @@ FirstRole aims connects startups with new software developers who are willing to
 
 Check requirements.txt for complete tools
 
-## Virtual env
-- python3 -m venv venv
-- source venv/bin/activate
+## Installation
+
+```bash
+git clone https://github.com/johndiginee/FirstRole_v1.git
+```
+```bash
+python3 -m venv venv
+```
+```bash
+source venv/bin/activate
+```
+```bash
+pip install -r requirements.txt
+```
+
+## Authors
+John Diginee - [LinkedIn](https://www.linkedin.com/in/johndiginee/) / [Twitter](http://twitter.com/johndiginee)
 

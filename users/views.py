@@ -5,6 +5,8 @@ from .models import User
 from .form import RegisterUserForm
 from resume.models import Resume
 from company.models import Company
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 def signup_user(request):
@@ -22,7 +24,13 @@ def register_applicant(request):
             var.save()
             Resume.objects.create(user=var)
             messages.info(request, 'Your account has been created. Please login')
-            # Add mail
+            # Add sign up welcome mail
+            subject = 'Welcome to FirstRole'
+            message = f'Hi {user.username}, Thank you for registering in FirstRole.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [user.email]
+            send_mail(subject, message, from_email, recipient_list)
+
             return redirect('login')
         else:
             messages.warning(request, 'Something wenr wrong')

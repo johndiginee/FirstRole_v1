@@ -32,6 +32,9 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+```bash
+python3 manage.py runserver
+```
 
 ## Authors
 John Diginee - [LinkedIn](https://www.linkedin.com/in/johndiginee/) / [Twitter](http://twitter.com/johndiginee)

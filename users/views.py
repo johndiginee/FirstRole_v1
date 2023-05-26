@@ -22,6 +22,7 @@ def register_applicant(request):
             var.save()
             Resume.objects.create(user=var)
             messages.info(request, 'Your account has been created. Please login')
+            # Add mail
             return redirect('login')
         else:
             messages.warning(request, 'Something wenr wrong')

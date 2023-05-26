@@ -7,6 +7,10 @@ from resume.models import Resume
 from company.models import Company
 
 
+def signup_user(request):
+    """Sign Up users."""
+    return render(request, 'users/signup.html')
+
 def register_applicant(request):
     """Register applicant only."""
     if request.method == 'POST':

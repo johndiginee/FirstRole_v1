@@ -1,0 +1,111 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8" />
+    <title>Sign In | FirstRole</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" " />
+    <meta name="keywords" content="" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+
+    <!-- Bootstrap Css -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="{% static 'assets/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
+    <!--Custom Css-->
+
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div>
+
+
+        <div class="main-content">
+
+            <div class="page-content">
+
+                <!-- START SIGN-IN -->
+                <section class="bg-auth">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-10 col-lg-12">
+                                <div class="card auth-box">
+                                    <div class="row g-0">
+                                        <div class="col-lg-6">
+                                            <div class="auth-content card-body p-5 h-100 text-black"
+                                                style="background-color: #fff;">
+                                                
+                                                <img src="{% static 'assets/images/seeker.2d561964.svg' %}"
+                                                    alt="" style="padding-bottom: 10px;">
+                                                <h1>Job Seeker</h1>
+                                                <center style="padding-bottom: 10px;">Are you looking for your first tech
+                                                    job?
+                                                    Create a unique career profile with FirstRole</center>
+                                                <a href="{% url 'register-applicant' %}"><button type="button"
+                                                        class="btn btn-primary">Sign Up</button></a>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="auth-content card-body p-5 h-100 text-black" style="background-color: #f4f4f4;">
+                                                
+                                                <img src="{% static 'assets/images/employer.0f531d97.svg' %}"
+                                                    alt="" style="padding-bottom: 10px;">
+
+                                                <h1>Employer</h1>
+                                                <center style="padding-bottom: 10px;">Are you looking for quality
+                                                    candidates?
+                                                    Advertise and search with FirstRole </center>
+                                                <a href="{% url 'register-recruiter' %}"><button type="button"
+                                                        class="btn btn-primary">Sign Up</button></a>
+
+
+                                            </div>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end auth-box-->
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end container-->
+                </section>
+                <!-- END SIGN-IN -->
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+
+
+    <!--start back-to-top-->
+    <button onclick="topFunction()" id="back-to-top">
+        <i class="mdi mdi-arrow-up"></i>
+    </button>
+    <!--end back-to-top-->
+
+    <!-- JAVASCRIPT -->
+    <script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+
+
+    <!-- Switcher Js -->
+    <script src="{% static 'assets/js/pages/switcher.init.js' %}"></script>
+
+</body>
+
+</html>

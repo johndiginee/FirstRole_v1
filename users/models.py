@@ -18,4 +18,5 @@ class User(AbstractUser):
     has_resume = models.BooleanField(default=False)
     has_company = models.BooleanField(default=False)
 
-    
+    def __str__(self):
+        return self.username

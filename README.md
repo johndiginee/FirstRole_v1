@@ -10,7 +10,7 @@ FirstRole aims connects startups with new software developers who are willing to
 * Django - The Web Development Framework
 * Bootstrap - HTML, CSS and JavaScript framework
 * Javascript - The Frontend Language
-* Postgres - Relational Database Management System
+* SQLite - Relational Database Management System
 * Digital Ocean - Cloud Platform as a Service (PaaS)
 * Gunicorn - Python Web Server Gateway Interface HTTP server.
 

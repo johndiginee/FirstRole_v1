@@ -13,7 +13,7 @@ class Jobfilter(django_filters.FilterSet):
         widget=forms.Select(attrs={'class': 'form-control'}),
         )
     industry = django_filters.ModelChoiceFilter(
-        queryset=State.objects.all(),
+        queryset=Industry.objects.all(),
         empty_label="All Industries",
         label="Industries",
         widget=forms.Select(attrs={'class': 'form-control'}),

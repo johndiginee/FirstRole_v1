@@ -12,7 +12,6 @@ FirstRole aims connects startups with new software developers who are willing to
 * Javascript - The Frontend Language
 * SQLite - Relational Database Management System
 * Digital Ocean - Cloud Platform as a Service (PaaS)
-* Gunicorn - Python Web Server Gateway Interface HTTP server.
 
 ## Architecture
 <img src="https://res.cloudinary.com/dkezlmzn1/image/upload/v1684926876/Front_End_1_zcwr5l.png"/>

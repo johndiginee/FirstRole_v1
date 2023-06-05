@@ -342,7 +342,7 @@
                 <div class="col-lg-4">
                     <div class="footer-item mt-4 mt-lg-0 me-lg-5">
                         <h4 class="text-white mb-4">FirstRole</h4>
-                        <p class="text-white-50">FirstRole aims connects startups with new software developers who are willing to work for free.</p>
+                        <p class="text-white-50">FirstRole is a web app to help new software engineers land the first tech role!.</p>
                         <p class="text-white mt-3">Follow Us on:</p>
                         <ul class="footer-social-menu list-inline mb-0">
                             <li class="list-inline-item"><a href="#"><i class="uil uil-facebook-f"></i></a></li>
@@ -356,8 +356,8 @@
                     <div class="footer-item mt-4 mt-lg-0">
                         <p class="fs-16 text-white mb-4">Company</p>
                         <ul class="list-unstyled footer-list mb-0">
-                            <li><a href="#"><i class="mdi mdi-chevron-right"></i> About Us</a></li>
-                            <li><a href="#"><i class="mdi mdi-chevron-right"></i> Contact Us</a></li>
+                            <li><a href="{% url 'about' %}"><i class="mdi mdi-chevron-right"></i> About Us</a></li>
+                            <li><a href="{% url 'contact' %}"><i class="mdi mdi-chevron-right"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div><!--end col-->
@@ -365,37 +365,30 @@
                     <div class="footer-item mt-4 mt-lg-0">
                         <p class="fs-16 text-white mb-4">For Jobs</p>
                         <ul class="list-unstyled footer-list mb-0">
-                            <li><a href="#"><i class="mdi mdi-chevron-right"></i> Browser Jobs</a></li>
+                            <li><a href="{% url 'job-listing' %}"><i class="mdi mdi-chevron-right"></i> Browser Jobs</a></li>
                         </ul>
                     </div>
                 </div><!--end col-->
                 
-                <div class="col-lg-2 col-6">
-                    <div class="footer-item mt-4 mt-lg-0">
-                        <p class="fs-16 text-white mb-4">Support</p>
-                        <ul class="list-unstyled footer-list mb-0">
-                            <li><a href="#"><i class="mdi mdi-chevron-right"></i> Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div><!--end col-->
+             
             </div><!--end row-->
         </div><!--end container-->
     </section>
     <!-- END FOOTER -->
 
-<!-- START FOOTER-ALT -->
-<div class="footer-alt">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="text-white-50 text-center mb-0">
-                    <script>document.write(new Date().getFullYear())</script> &copy; FirstRole
-
-                </p>
-            </div><!--end col-->
-        </div><!--end row-->
-    </div><!--end container-->
-</div>
-<!-- END FOOTER -->
+    <!-- START FOOTER-ALT -->
+    <div class="footer-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-white-50 text-center mb-0">
+                        <script>document.write(new Date().getFullYear())</script> &copy; FirstRole | Developed by <a href="https://www.linkedin.com/in/johndiginee/" target="_blank">John Diginee</a>
+                    
+                    </p>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div>
+    <!-- END FOOTER -->
 
 {% endblock content %}

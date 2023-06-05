@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<div class="page-content">
+
+    <!-- Start home -->
+    <section class="page-title-box" style="padding-top: 152px!important; padding-bottom: 10px!important;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="text-center text-white">
+                        <h1 class="mb-4">About Us</h1>
+
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </section>
+    <!-- end home -->
+
+    <!-- START SHAPE -->
+    <div class="position-relative" style="z-index: 1">
+        <div class="shape">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
+                <path fill="#FFFFFF" fill-opacity="1"
+                    d="M0,192L120,202.7C240,213,480,235,720,234.7C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+    <!-- END SHAPE -->
+
+</div>
+
+<!-- START ABOUT -->
+<section class="section overflow-hidden">
+    <div class="container">
+        <div class="row align-items-center g-0">
+            <div class="col-lg-6">
+                <div class="section-title me-lg-5">
+                    <h6 class="sub-title">About Us</h6>
+                    <h2 class="title mb-4">Your Journey To Getting your First Role Tech</h2>
+
+                    <p class="text-muted">FirstRole is a web app to help new software engineers land the first tech
+                        role! The major reason new software developers struggle to get their first role in tech is often
+                        due to lack of experience.<br> <br>Most companies don’t want to invest time, money and resources
+                        into training one, only to lose them once they’ve gained experienced.<br></br>
+
+                        So they opt for someone that is already market ready, instead of risking it. And as such new
+                        developers keep getting rejected by tech companies due to lack of experience.<br><br> FirstRole
+                        aims connects startups with new software developers who are willing to work for free..</p>
+
+
+                    <div class="mt-3">
+                        <a href="{% url 'signup' %}" class="btn btn-primary btn-hover">Sign Up <i
+                                class="uil uil-angle-right-b align-middle"></i></a>
+                    </div>
+                </div>
+            </div><!--end col-->
+            <div class="col-lg-6">
+                <div class="about-img mt-4 mt-lg-0">
+                    <img src="{% static 'assets/images/about/about-us.jpeg' %}" alt="" class="img-fluid rounded">
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section>
+<!-- END ABOUT -->
+
+
+
+
+</div>
+<!-- End Page-content -->
+
+
+
+    <!-- START FOOTER -->
+    <section class="bg-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-item mt-4 mt-lg-0 me-lg-5">
+                        <h4 class="text-white mb-4">FirstRole</h4>
+                        <p class="text-white-50">FirstRole is a web app to help new software engineers land the first tech role!.</p>
+                        <p class="text-white mt-3">Follow Us on:</p>
+                        <ul class="footer-social-menu list-inline mb-0">
+                            <li class="list-inline-item"><a href="#"><i class="uil uil-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="uil uil-linkedin-alt"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="uil uil-google"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="uil uil-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-2 col-6">
+                    <div class="footer-item mt-4 mt-lg-0">
+                        <p class="fs-16 text-white mb-4">Company</p>
+                        <ul class="list-unstyled footer-list mb-0">
+                            <li><a href="{% url 'about' %}"><i class="mdi mdi-chevron-right"></i> About Us</a></li>
+                            <li><a href="{% url 'contact' %}"><i class="mdi mdi-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-2 col-6">
+                    <div class="footer-item mt-4 mt-lg-0">
+                        <p class="fs-16 text-white mb-4">For Jobs</p>
+                        <ul class="list-unstyled footer-list mb-0">
+                            <li><a href="{% url 'job-listing' %}"><i class="mdi mdi-chevron-right"></i> Browser Jobs</a></li>
+                        </ul>
+                    </div>
+                </div><!--end col-->
+                
+
+        </div><!--end container-->
+    </section>
+    <!-- END FOOTER -->
+
+    <!-- START FOOTER-ALT -->
+    <div class="footer-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-white-50 text-center mb-0">
+                        <script>document.write(new Date().getFullYear())</script> &copy; FirstRole | Developed by <a href="https://www.linkedin.com/in/johndiginee/" target="_blank">John Diginee</a>
+                    
+                    </p>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div>
+    <!-- END FOOTER -->
+
+{% endblock content %}

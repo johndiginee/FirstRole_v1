@@ -42,3 +42,11 @@ def job_details(request, pk):
 
 def page_not_found_view(request, exception):
     return render(request, 'website/404.html', status=404)
+
+def about_us(request):
+    """About us page."""
+    return render(request, 'website/about.html')
+
+def contact_us(request):
+    """Contact us page."""
+    return render(request, 'website/contact.html')
